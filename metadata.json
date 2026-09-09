@@ -1,0 +1,6 @@
+{
+  "name": "Kofry",
+  "description": "Application personnelle et privée de gestion d'épargne par objectifs.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
