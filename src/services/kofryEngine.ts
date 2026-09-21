@@ -9,6 +9,9 @@ const STORAGE_KEYS = {
   IDEMPOTENCY_PROCESSED: 'kofry_idempotency_keys_v1',
 };
 
+const IDENTIFIANT_CONNEXION = 'kofry';
+const MOT_DE_PASSE_CONNEXION = 'kofry2026';
+
 // Formateur de devise FCFA avec séparateur de milliers
 export function formatFCFA(amount: number): string {
   if (isNaN(amount)) return '0 FCFA';
@@ -97,7 +100,7 @@ const DEMO_COFFRES: Coffre[] = [
 
 const DEMO_PROPRIETAIRE: Proprietaire = {
   nomComplet: 'Nanga',
-  identifiant: 'nanga',
+  identifiant: 'kofry',
   numeroMobileMoney: '+225 07 89 45 12 30',
   operateurDefaut: 'ORANGE',
   derniereConnexion: '2026-09-09T08:15:00.000Z',
@@ -303,8 +306,12 @@ export class KofryEngine {
   static connecter(identifiant: string, motDePasse: string): { succes: boolean; message: string } {
     const prop = this.getProprietaire();
     // Espace privé pour son propriétaire exclusif
-    // Identifiant attendu: 'nanga' (insensible à la casse) ou mot de passe défini
-    if (identifiant.trim().toLowerCase() === prop.identifiant.toLowerCase() && motDePasse.length >= 4) {
+    // Identifiant insensible à la casse et mot de passe défini
+    if (
+      identifiant.trim().toLowerCase() === IDENTIFIANT_CONNEXION &&
+      motDePasse === MOT_DE_PASSE_CONNEXION
+    ) {
+      prop.identifiant = IDENTIFIANT_CONNEXION;
       localStorage.setItem(STORAGE_KEYS.AUTH, 'true');
       prop.derniereConnexion = new Date().toISOString();
       this.saveProprietaire(prop);

@@ -84,7 +84,7 @@ npm run dev
 Ouvrez ensuite votre navigateur sur `http://localhost:3000`.
 
 ### Identifiants d'accès préconfigurés pour le propriétaire
-- **Identifiant** : `nanga`
+- **Identifiant** : `kofry`
 - **Mot de passe** : `kofry2026`
 
 ---

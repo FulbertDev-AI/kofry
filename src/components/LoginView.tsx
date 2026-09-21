@@ -7,7 +7,7 @@ interface LoginViewProps {
 }
 
 export const LoginView: React.FC<LoginViewProps> = ({ surConnexionReussie }) => {
-  const [identifiant, setIdentifiant] = useState('nanga');
+  const [identifiant, setIdentifiant] = useState('kofry');
   const [motDePasse, setMotDePasse] = useState('kofry2026');
   const [erreur, setErreur] = useState<string | null>(null);
   const [chargement, setChargement] = useState(false);
@@ -76,7 +76,7 @@ export const LoginView: React.FC<LoginViewProps> = ({ surConnexionReussie }) => 
                 required
                 value={identifiant}
                 onChange={(e) => setIdentifiant(e.target.value)}
-                placeholder="Ex: nanga"
+                placeholder="Ex: kofry"
                 className="w-full rounded-lg border border-[#D1D5DB] px-3.5 py-2.5 text-sm text-[#1F2937] placeholder-[#9CA3AF] focus:border-[#1C4A3E] focus:outline-hidden focus:ring-1 focus:ring-[#1C4A3E] transition"
               />
             </div>
@@ -121,12 +121,6 @@ export const LoginView: React.FC<LoginViewProps> = ({ surConnexionReussie }) => 
           </div>
         </form>
 
-        {/* Note d'accès rapide pour le propriétaire */}
-        <div className="mt-6 pt-4 border-t border-[#F3F4F6] text-center">
-          <p className="text-[11px] text-[#6B7280]">
-            Accès préconfiguré propriétaire : <span className="font-mono text-[#1F2937]">nanga</span> / <span className="font-mono text-[#1F2937]">kofry2026</span>
-          </p>
-        </div>
       </div>
 
       {/* Modal d'information mot de passe oublié */}
@@ -156,7 +150,7 @@ export const LoginView: React.FC<LoginViewProps> = ({ surConnexionReussie }) => 
                 Il n'y a pas de serveur public ni d'inscription ouverte. Vos clés de sécurité par défaut sont :
               </p>
               <div className="p-3 bg-[#F4F6F5] rounded-lg font-mono text-xs text-[#1C4A3E] space-y-1">
-                <div>Identifiant : <strong>nanga</strong></div>
+                <div>Identifiant : <strong>kofry</strong></div>
                 <div>Mot de passe : <strong>kofry2026</strong></div>
               </div>
               <p className="text-[11px] text-[#6B7280]">
